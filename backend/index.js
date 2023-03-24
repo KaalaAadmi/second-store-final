@@ -13,12 +13,12 @@ const cors = require("cors");
 const path = require("path");
 
 // const errorMiddleware = require("./utils/errors");
-const _dirname = path.dirname("");
-const buildPath = path.join(_dirname, "../frontend/build");
+const __dirname = path.dirname("");
+const buildPath = path.join(__dirname, "../frontend/build");
 
 app.get("/*", function (req, res) {
   res.sendFile(
-    path.join(_dirname, "../frontend/build/index.html"),
+    path.join(__dirname, "../frontend/build/index.html"),
     function (err) {
       if (err) {
         res.status(500).send(err);
