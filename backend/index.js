@@ -13,8 +13,10 @@ const cors = require("cors");
 const path = require("path");
 
 // const errorMiddleware = require("./utils/errors");
-const __dirname = path.dirname("");
-const buildPath = path.join(__dirname, "../frontend/build");
+const _dirname = path.dirname("");
+const buildPath = path.join(_dirname, "../frontend/build");
+
+app.use(express.static(buildPath))
 
 app.get("/*", function (req, res) {
   res.sendFile(
@@ -26,6 +28,7 @@ app.get("/*", function (req, res) {
     }
   );
 });
+
 dotenv.config();
 mongoose
   .connect(process.env.MONGO_URL)
