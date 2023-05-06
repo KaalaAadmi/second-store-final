@@ -32,7 +32,7 @@ export const register = async (dispatch, user) => {
   dispatch(registerStart());
   try {
     const res = await axios.post(
-      "https://second-store.herokuapp.com/api/auth/register",
+      "http://localhost:5000/api/auth/register",
       user
     );
     dispatch(registerSuccess(res.data));
@@ -54,7 +54,7 @@ export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await axios.post(
-      "https://second-store.herokuapp.com/api/auth/login",
+      "http://localhost:5000/api/auth/login",
       user
     );
     dispatch(loginSuccess(res.data));
@@ -75,7 +75,7 @@ export const logout = async (dispatch) => {
   dispatch(logoutStart());
   try {
     const res = await axios.get(
-      "https://second-store.herokuapp.com/api/auth/logout"
+      "http://localhost:5000/api/auth/logout"
     );
     dispatch(logoutSuccess(res.data));
     toast.success("Logout Successful", {
@@ -95,7 +95,7 @@ export const newsletter = async (dispatch, user) => {
   dispatch(newsLetterStart());
   try {
     const res = await axios.post(
-      "https://second-store.herokuapp.com/api/newsletter",
+      "http://localhost:5000/api/newsletter",
       user
     );
     dispatch(newsLetterSuccess(res.data));
@@ -119,7 +119,7 @@ export const sendEmail = async (dispatch, email) => {
   console.log(emailId);
   try {
     const res = await axios.post(
-      "https://second-store.herokuapp.com/api/auth/sendEmail",
+      "http://localhost:5000/api/auth/sendEmail",
       email
     );
     console.log(res.data);
@@ -145,7 +145,7 @@ export const checkOtp = async (dispatch, otp) => {
   // console.log(email);
   try {
     const res = await axios.post(
-      "https://second-store.herokuapp.com/api/auth/checkOtp",
+      "http://localhost:5000/api/auth/checkOtp",
       otp
     );
     // console.log(res);
@@ -171,7 +171,7 @@ export const updatePassword = async (dispatch, password) => {
   const user = { email: emailId, password: password.password };
   try {
     const res = await axios.post(
-      "https://second-store.herokuapp.com/api/auth/changePassword",
+      "http://localhost:5000/api/auth/changePassword",
       user
     );
     console.log(res);

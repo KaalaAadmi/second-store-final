@@ -24,8 +24,8 @@ export default function Products({ cat, filters, sort }) {
       try {
         const res = await axios.get(
           cat
-            ? `https://second-store.herokuapp.com/api/products?category=${cat}`
-            : "https://second-store.herokuapp.com/api/products"
+            ? `http://localhost:5000/api/products?category=${cat}`
+            : "http://localhost:5000/api/products"
         );
         setProducts(res.data);
       } catch (error) {}

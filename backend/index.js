@@ -10,24 +10,6 @@ const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
 const newsLetterRoute = require("./routes/newsletter");
 const cors = require("cors");
-const path = require("path");
-
-// const errorMiddleware = require("./utils/errors");
-const _dirname = path.dirname("");
-const buildPath = path.join(_dirname, "../frontend/build");
-
-app.use(express.static(buildPath))
-
-app.get("/*", function (req, res) {
-  res.sendFile(
-    path.join(__dirname, "../frontend/build/index.html"),
-    function (err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    }
-  );
-});
 
 dotenv.config();
 mongoose

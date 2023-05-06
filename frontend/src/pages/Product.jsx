@@ -145,7 +145,7 @@ export default function Product() {
     const getProduct = async () => {
       try {
         const res = await axios.get(
-          `https://second-store.herokuapp.com/api/products/find/${id}`
+          `http://localhost:5000/api/products/find/${id}`
         );
         setProduct(res.data);
       } catch (error) {}
